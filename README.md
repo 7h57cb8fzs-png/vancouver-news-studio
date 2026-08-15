@@ -5,25 +5,31 @@ A focused Persian-language Vancouver newsroom studio for turning Vancouver’s d
 ## What it does
 
 - ranks story ideas with a transparent **hotness score**
-- lets you select a story and edit the Persian copy
-- provides separate content for:
-  - Slide 1: headline and short hook
-  - Slide 2: practical bullet points
-- copies each slide independently, ready for Canva or Instagram design tools
-- works as a static site with no API key or server required
+- lets you add a custom Vancouver story, source, time, location, and photo direction
+- generates separate Persian copy for two Instagram slides
+- copies each slide independently, ready for a design template
+- works as a responsive static site with no API key or server required
 
 ## Daily workflow
 
-1. Add candidate links to the feed panel.
-2. Use source credibility, freshness and engagement to set the score.
-3. Select the leading story.
-4. Review the Persian draft and press **Copy** for each slide.
-5. Place the copy and photo in your Instagram template.
+1. Review the suggested stories or add a new verified source.
+2. Select the strongest story.
+3. Verify the date, time, address, and official link.
+4. Review and copy the generated Persian draft.
+5. Place the copy and photo in the Instagram template.
+
+## Deployment
+
+Cloudflare Pages settings:
+
+- Production branch: `main`
+- Framework preset: `None`
+- Build command: `exit 0`
+- Build output directory: `.`
+- Root directory: leave blank
+
+Every new commit to `main` should trigger a production deployment.
 
 ## Next phase
 
 Connect official and local feeds, introduce an editor review queue, add scheduled daily discovery, and export the final two-slide post as an image.
-
-## Run locally
-
-Open `index.html` in any modern browser. No installation required.
