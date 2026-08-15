@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vancouver News Studio</title>
+  <meta name="description" content="Studio for turning Vancouver news and events into Persian Instagram posts." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">VANCOUVER NEWS STUDIO · DAILY DESK</p>
+        <h1>استودیوی خبر ونکوور برای پست فارسی</h1>
+        <p class="intro">سوژه‌های روز را ارزیابی کنید، خبر خودتان را اضافه کنید و متن دو اسلاید را فوراً بسازید.</p>
+      </div>
+      <div class="date" id="today"></div>
+    </header>
+
+    <section class="layout">
+      <aside class="feed card">
+        <div class="section-head">
+          <div><p class="label">پایش روزانه</p><h2>سوژه‌های پیشنهادی</h2></div>
+          <span class="live">● میز خبر</span>
+        </div>
+        <div id="storyList" class="story-list"></div>
+        <p class="hint">منابع پیشنهادی: PNE، City of Vancouver، Daily Hive و برگزارکنندهٔ رسمی. همیشه جزئیات را قبل از انتشار تأیید کنید.</p>
+      </aside>
+
+      <section class="workspace">
+        <div class="selected card">
+          <div class="selected-top">
+            <div><p class="label">انتخاب امروز</p><h2 id="storyTitle"></h2></div>
+            <div class="score"><span>امتیاز داغی</span><strong id="score"></strong></div>
+          </div>
+          <p id="storyMeta" class="meta"></p>
+          <p id="storySummary" class="summary"></p>
+          <a id="sourceLink" class="source" href="#" target="_blank" rel="noreferrer">مشاهدهٔ منبع ↗</a>
+        </div>
+
+        <section class="composer card">
+          <div class="section-head"><div><p class="label">سوژهٔ جدید</p><h2>تولید متن با اطلاعات شما</h2></div><span class="mini">بدون API</span></div>
+          <div class="form-grid">
+            <label>عنوان خبر<input id="customTitle" placeholder="مثلاً: فستیوال غذا در ونکوور" /></label>
+            <label>دسته‌بندی<input id="customType" placeholder="رویداد امروز" /></label>
+            <label>تاریخ یا ساعت<input id="customTime" placeholder="شنبه · ساعت ۷ شب" /></label>
+            <label>محل<input id="customPlace" placeholder="نام محل، ونکوور" /></label>
+            <label>لینک منبع<input id="customSource" type="url" placeholder="https://..." /></label>
+            <label>پیشنهاد عکس<input id="customPhoto" placeholder="عکس رسمی یا نمای محل" /></label>
+          </div>
+          <button id="createStory" class="generate">ساخت متن دو اسلاید</button>
+        </section>
+
+        <div class="slides">
+          <article class="slide card slide-one">
+            <div class="slide-head"><span>اسلاید ۱</span><button data-copy="slideOne">کپی متن</button></div>
+            <p class="label">عنوان روی عکس</p>
+            <textarea id="slideOne" aria-label="Slide one copy"></textarea>
+            <p class="photo-note">پیشنهاد عکس: <span id="photoSuggestion"></span></p>
+          </article>
+
+          <article class="slide card slide-two">
+            <div class="slide-head"><span>اسلاید ۲</span><button data-copy="slideTwo">کپی متن</button></div>
+            <p class="label">توضیحات کوتاه</p>
+            <textarea id="slideTwo" aria-label="Slide two copy"></textarea>
+            <p class="editor-note">قبل از انتشار، تاریخ، ساعت، آدرس و لینک بلیت را با منبع رسمی چک کنید.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
